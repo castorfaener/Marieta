@@ -8,6 +8,11 @@ const int FanPin = 10;
 const int AM2302Pin = 8;
 const int DoorSensor = 4;
 
+const int EncCLK = 2;
+const int EncDt = 12;
+const int EncButton = 11;
+
+volatile unsigned int EncoderPos = 0;
 
 
 void setup()
@@ -20,7 +25,22 @@ void setup()
 	pinMode(DoorSensor, INPUT);
 	pinMode(AM2302Pin, INPUT);
 
+	attachInterrupt(0, Encoder, CHANGE);
+
 }
+
+void Encoder()
+{
+	if (digitalRead(EncCLK) == digitalRead(EncDt))
+	{
+		EncoderPos++; 	//Sentido horario
+	}
+	else 
+	{
+		EncoderPos--;	//Sentido antihorario
+	}
+}
+
 
 
 void loop()
