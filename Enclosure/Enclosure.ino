@@ -1,4 +1,5 @@
 #include <Wire.h>
+#include <LiquidCrystal_I2C.h>
 
 const int RedLedPin = 6;
 const int GreenLedPin = 5;
@@ -15,6 +16,9 @@ const int EncButton = 11;
 volatile unsigned int EncoderPos = 0;
 
 
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+
 void setup()
 {
 	pinMode(RedLedPin, OUTPUT);
@@ -26,6 +30,9 @@ void setup()
 	pinMode(AM2302Pin, INPUT);
 
 	attachInterrupt(0, Encoder, CHANGE);
+
+	lcd.begin();
+	lcd.backlight();
 
 }
 
@@ -113,4 +120,29 @@ void RGB(int val)
 	digitalWrite(RedLedPin, RedVal);
 	digitalWrite(GreenLedPin, GreenVal);
 	digitalWrite(BlueLedPin, BlueVal);
+}
+
+void Menu(int SubMenu)
+{
+	switch(SubMenu)
+	{
+		case 0:
+		lcd.clear();
+		lcd.setCursor(0 ,0);
+		lcd.print("Temperatura 3D");
+		lcd.setCursor(0,1);
+		lcd.print("Humedad 3D");
+		delay(10);
+		break;
+
+		case 1:
+		lcd.clear();
+		lcd.setCursor(0 ,0);
+		lcd.print("Temperatura H");
+		lcd.setCursor(0,1);
+		lcd.print("Humedad H");
+		delay(10);
+		break;
+
+	}
 }
