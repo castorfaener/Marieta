@@ -1,0 +1,28 @@
+templates:
+  - &nema_conn
+    type: JST-HX
+    subtype: female
+    pincount: 4
+  - &2P_conn
+    type: JST-HX
+    subtype: female
+    pincount: 2
+  - &nema_cable  
+
+
+
+
+connectors:
+  X1:
+    type: D-Sub
+    subtype: female
+    pincount: 37
+  X2: 
+
+cables:
+  W1: 
+
+connections:
+  -
+    
+   
