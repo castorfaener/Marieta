@@ -1,12 +1,14 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
+
+
 const int RedLedPin = 6;
 const int GreenLedPin = 5;
 const int BlueLedPin = 3;
 const int FanPin = 10;
 
-const int AM2302Pin = 8;
+const int DHTPin = 8;
 const int DoorSensor = 4;
 
 const int EncCLK = 2;
@@ -27,12 +29,17 @@ void setup()
 	pinMode(FanPin, OUTPUT);
 
 	pinMode(DoorSensor, INPUT);
-	pinMode(AM2302Pin, INPUT);
+	pinMode(DHTPin, INPUT);
 
 	attachInterrupt(0, Encoder, CHANGE);
 
-	lcd.begin();
+	lcd.init();
 	lcd.backlight();
+
+	Serial.begin(9600);
+
+
+	
 
 }
 
@@ -52,7 +59,12 @@ void Encoder()
 
 void loop()
 {
-
+	//Encoder();
+	lcd.clear();
+	lcd.setCursor(0 ,0);
+	lcd.print(EncoderPos);
+	Serial.println(EncoderPos);
+	delay(100);
 
 }
 

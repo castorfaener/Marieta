@@ -1,0 +1,50 @@
+templates:
+  - &nema_conn
+    type: JST-HX
+    subtype: female
+    pinlabels: [1B, 1A, 2A, 2B]
+    image:
+      src: JST_XHP_4_female.png
+  - &DIN8P_conn
+    type: DIN
+    subtype: female
+    pincount: 8  
+    image:
+      src: DIN_female_8pin.png
+  - &nema_cable 
+    colors: [BK, GN, BU, RD] 
+    category: bundle
+
+
+
+connectors:
+  X1:
+      <<: *nema_conn 
+      notes: Z1 Axis
+  X2:
+      <<: *nema_conn 
+      notes: Z2 Axis
+  X3:
+      <<: *DIN8P_conn
+      notes: Z Motors
+
+
+
+cables:
+  W1: 
+    <<: *nema_cable #Eje Z1
+  W2: 
+    <<: *nema_cable #Eje Z2
+
+
+connections:
+
+  -   #Eje Z1
+    - X1: [1-4]
+    - W1: [1-4]
+    - X3: [1-4]
+  -   #Eje Z2
+    - X2: [1-4]
+    - W2: [1-4]
+    - X3: [5-8]
+
