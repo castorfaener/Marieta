@@ -157,11 +157,11 @@ graph {
 	X1:p2r:e -- W1:w2:w
 	W1:w2:e -- X3:p2l:w
 	edge [color="#000000:#0066ff:#000000"]
-	X1:p3r:e -- W1:w3:w
-	W1:w3:e -- X3:p3l:w
+	X1:p3r:e -- W1:w4:w
+	W1:w4:e -- X3:p3l:w
 	edge [color="#000000:#ff0000:#000000"]
-	X1:p4r:e -- W1:w4:w
-	W1:w4:e -- X3:p4l:w
+	X1:p4r:e -- W1:w3:w
+	W1:w3:e -- X3:p4l:w
 	W1 [label=<
 <table border="0" cellspacing="0" cellpadding="0">
  <tr><td>
@@ -206,29 +206,29 @@ graph {
     </td>
    </tr>
    <tr>
-    <td>X1:3</td>
-    <td>BU</td>
-    <td>X3:3</td>
-   </tr>
-   <tr>
-    <td colspan="3" border="0" cellspacing="0" cellpadding="0" port="w3" height="6">
-     <table cellspacing="0" cellborder="0" border="0">
-      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
-      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#0066ff" border="0"></td></tr>
-      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
-     </table>
-    </td>
-   </tr>
-   <tr>
     <td>X1:4</td>
     <td>RD</td>
     <td>X3:4</td>
    </tr>
    <tr>
-    <td colspan="3" border="0" cellspacing="0" cellpadding="0" port="w4" height="6">
+    <td colspan="3" border="0" cellspacing="0" cellpadding="0" port="w3" height="6">
      <table cellspacing="0" cellborder="0" border="0">
       <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
       <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#ff0000" border="0"></td></tr>
+      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
+     </table>
+    </td>
+   </tr>
+   <tr>
+    <td>X1:3</td>
+    <td>BU</td>
+    <td>X3:3</td>
+   </tr>
+   <tr>
+    <td colspan="3" border="0" cellspacing="0" cellpadding="0" port="w4" height="6">
+     <table cellspacing="0" cellborder="0" border="0">
+      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
+      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#0066ff" border="0"></td></tr>
       <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
      </table>
     </td>
@@ -245,11 +245,11 @@ graph {
 	X2:p2r:e -- W2:w2:w
 	W2:w2:e -- X3:p6l:w
 	edge [color="#000000:#0066ff:#000000"]
-	X2:p3r:e -- W2:w3:w
-	W2:w3:e -- X3:p7l:w
+	X2:p3r:e -- W2:w4:w
+	W2:w4:e -- X3:p7l:w
 	edge [color="#000000:#ff0000:#000000"]
-	X2:p4r:e -- W2:w4:w
-	W2:w4:e -- X3:p8l:w
+	X2:p4r:e -- W2:w3:w
+	W2:w3:e -- X3:p8l:w
 	W2 [label=<
 <table border="0" cellspacing="0" cellpadding="0">
  <tr><td>
@@ -294,29 +294,29 @@ graph {
     </td>
    </tr>
    <tr>
-    <td>X2:3</td>
-    <td>BU</td>
-    <td>X3:7</td>
-   </tr>
-   <tr>
-    <td colspan="3" border="0" cellspacing="0" cellpadding="0" port="w3" height="6">
-     <table cellspacing="0" cellborder="0" border="0">
-      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
-      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#0066ff" border="0"></td></tr>
-      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
-     </table>
-    </td>
-   </tr>
-   <tr>
     <td>X2:4</td>
     <td>RD</td>
     <td>X3:8</td>
    </tr>
    <tr>
-    <td colspan="3" border="0" cellspacing="0" cellpadding="0" port="w4" height="6">
+    <td colspan="3" border="0" cellspacing="0" cellpadding="0" port="w3" height="6">
      <table cellspacing="0" cellborder="0" border="0">
       <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
       <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#ff0000" border="0"></td></tr>
+      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
+     </table>
+    </td>
+   </tr>
+   <tr>
+    <td>X2:3</td>
+    <td>BU</td>
+    <td>X3:7</td>
+   </tr>
+   <tr>
+    <td colspan="3" border="0" cellspacing="0" cellpadding="0" port="w4" height="6">
+     <table cellspacing="0" cellborder="0" border="0">
+      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
+      <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#0066ff" border="0"></td></tr>
       <tr><td colspan="3" cellpadding="0" height="2" bgcolor="#000000" border="0"></td></tr>
      </table>
     </td>

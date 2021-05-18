@@ -1,0 +1,111 @@
+templates:
+  - &fan_conn
+    type: JST-HX
+    subtype: female
+    pinlabels: [+, -]
+    #image:
+      #src: JST_XHP_2_female.jpeg
+  - &pos_conn
+    type: JST-HX
+    subtype: female
+    pinlabels: [S, GND, NC]
+    #image:
+      #src: JST_XHP_3_female.jpeg
+  - &aux_conn
+    type: JST-HX
+    subtype: female
+    pinlabels: [aux1, aux2, aux3, aux4, aux5]
+    #image:
+      #src: JST_XHP_3_female.jpeg
+  - &DB15_conn
+    type: SUB D-15
+    subtype: male
+    pincount: 15 
+    pinlabels: [V1+, V1-, AUX1, AUX2, Scom, V2+, V2-, AUX3, AUX4, AUX5, V3+, V3-, Sx, Sy, Sz] 
+    image:
+      src: DB15_male.png
+  - &fan_cable 
+    colors: [BK, RD] 
+  - &aux_cable
+
+    
+
+
+
+connectors:
+  X1:
+      <<: *DB15_conn 
+  X2:
+      <<: *fan_conn 
+      notes: Fan 1
+  X3:
+      <<: *fan_conn 
+      notes: Fan 2
+  X4:
+      <<: *fan_conn 
+      notes: Fan 3
+  X5:
+      <<: *pos_conn
+      notes: X position
+  X6:
+      <<: *pos_conn
+      notes: Y position
+  X7:
+      <<: *pos_conn
+      notes: Z position
+  X8:
+      <<: *aux_conn
+      notes: Aux connections
+
+
+cables:
+  W1: 
+    <<: *fan_cable #Fan1
+  W2: 
+    <<: *fan_cable #Fan2
+  W3: 
+    <<: *fan_cable #Fan3
+  W4:
+    colors: [WH, WH, WH, WH, WH]
+  W5:
+    colors: [BK, WH]
+  W6:
+    colors: [YE]
+  W7:
+    colors: [BU]
+ 
+
+
+
+connections:
+
+  -   #Fan1
+    - X1: [1-2]
+    - W1: [1-2]
+    - X2: [1-2]
+  -   #Fan2
+    - X1: [6-7]
+    - W2: [1-2]
+    - X3: [1-2]
+  -   #Fan3
+    - X1: [11-12]
+    - W3: [1-2]
+    - X4: [1-2]
+  -   #Aux
+    - X1: [3,4,8,9,10]
+    - W4: [1-5]
+    - X8: [1-5]
+  -   #XPos
+    - X1: [5,13]
+    - W5: [1,2]
+    - X5: [2,1]
+  -   #YPos
+    - X1: [14]
+    - W6: [1]
+    - X6: [1]
+  -   #ZPos
+    - X1: [15]
+    - W7: [1]
+    - X7: [1]
+
+

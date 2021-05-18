@@ -12,7 +12,7 @@ templates:
     image:
       src: DIN_female_8pin.png
   - &nema_cable 
-    colors: [BK, GN, BU, RD] 
+    colors: [BK, GN, RD, BU] 
     category: bundle
 
 
@@ -41,10 +41,10 @@ connections:
 
   -   #Eje Z1
     - X1: [1-4]
-    - W1: [1-4]
+    - W1: [1,2,4,3]
     - X3: [1-4]
   -   #Eje Z2
     - X2: [1-4]
-    - W2: [1-4]
+    - W2: [1,2,4,3]
     - X3: [5-8]
 
