@@ -25,7 +25,7 @@ templates:
     image:
       src: DB15_male.png
   - &fan_cable 
-    colors: [BK, RD] 
+    colors: [RD, BK] 
   - &aux_cable
 
     
