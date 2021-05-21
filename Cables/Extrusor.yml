@@ -1,0 +1,74 @@
+templates:
+  - &nema_conn
+    type: JST-HX
+    subtype: female
+    pinlabels: [1B, 1A, 2A, 2B]
+    image:
+      src: JST_XHP_4_female.png
+  - &DIN8P_conn
+    type: DIN
+    subtype: female
+    pincount: 8  
+    image:
+      src: DIN_female_8pin.png
+  - &sens_conn
+    type: JST-HX
+    subtype: female
+    pinlabels: [S1, S2]
+    image:
+      src: JST_XHP_2_female.png
+  - &nema_cable 
+    colors: [BK, GN, RD, BU] 
+    category: bundle
+  - &sens_conn
+
+
+
+connectors:
+  X1:
+      <<: *nema_conn 
+      notes: Extruder
+  X2:
+      <<: *sens_conn 
+      notes: Hotend Temperature
+  X3:
+      <<: *DIN8P_conn
+      notes: Extruder and Hotend
+  ferrule_crimp:
+    style: simple
+    autogenerate: true
+    type: Crimp ferrule
+    subtype: 0.25 mm²
+    color: YE    
+
+
+cables:
+  W1: 
+    <<: *nema_cable #Extruder
+  W2: 
+    colors: [WH, WH]  #Hotend Temp
+  W3: 
+    colors: [BU]  #Hotend
+  W4:
+    colors: [YE]  #Hotend
+
+
+connections:
+
+  -   #Extruder
+    - X1: [1-4]
+    - W1: [1,2,4,3]
+    - X3: [1-4]
+  -   #Hotend Temp
+    - X2: [1-2]
+    - W2: [1-2]
+    - X3: [7-8]
+  -   #Hotend
+    - ferrule_crimp
+    - W3: [1]
+    - X3: [5]
+  -   #Hotend
+    - ferrule_crimp
+    - W4: [1]
+    - X3: [6]
+
